@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>AMT Adventure</title>
+  <meta name="description" content="AMT Adventure — Explore, Battle and Earn AMT.">
+  <meta name="theme-color" content="#090d18">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">A</div>
+      <div>
+        <h1>AMT Adventure</h1>
+        <span>Explore • Battle • Earn</span>
+      </div>
+    </div>
+
+    <div class="player-info">
+      <span id="playerName">Pioneer</span>
+      <div class="amt-balance">
+        <span>🪙</span>
+        <strong id="amtBalance">0.00</strong>
+        <small>AMT</small>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- MAIN GAME -->
+  <main class="game-container">
+
+    <!-- WORLD -->
+    <section class="world-card">
+
+      <div class="world-header">
+        <div>
+          <span class="location-label">CURRENT ADVENTURE</span>
+          <h2 id="worldName">Emerald Valley</h2>
+        </div>
+
+        <div class="stage">
+          Stage <strong id="stageNumber">1</strong>
+        </div>
+      </div>
+
+      <!-- CANVAS -->
+      <div class="game-screen">
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="battle-message" id="battleMessage">
+          A wild creature appeared!
+        </div>
+      </div>
+
+      <!-- PLAYER / ENEMY -->
+      <div class="combatants">
+
+        <div class="fighter player">
+          <div class="fighter-name">
+            <span id="petName">Emberfang</span>
+            <span>Lv. 1</span>
+          </div>
+
+          <div class="hp-bar">
+            <div id="playerHp" class="hp-fill"></div>
+          </div>
+
+          <div class="hp-text">
+            HP <span id="playerHpText">100 / 100</span>
+          </div>
+        </div>
+
+
+        <div class="vs">VS</div>
+
+
+        <div class="fighter enemy">
+          <div class="fighter-name">
+            <span id="enemyName">Wild Beast</span>
+            <span>Lv. 1</span>
+          </div>
+
+          <div class="hp-bar">
+            <div id="enemyHp" class="hp-fill enemy-hp"></div>
+          </div>
+
+          <div class="hp-text">
+            HP <span id="enemyHpText">100 / 100</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ACTIONS -->
+      <div class="actions">
+
+        <button id="attackBtn" class="action attack">
+          ⚔️
+          <span>Attack</span>
+        </button>
+
+        <button id="abilityBtn" class="action ability">
+          ✨
+          <span>Ability</span>
+        </button>
+
+        <button id="exploreBtn" class="action explore">
+          🗺️
+          <span>Explore</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT PANEL -->
+    <aside class="side-panel">
+
+      <div class="panel-card">
+        <h3>🏆 Adventure Rewards</h3>
+
+        <div class="reward-row">
+          <span>Battle Reward</span>
+          <strong id="battleReward">0 AMT</strong>
+        </div>
+
+        <div class="reward-row">
+          <span>Adventure Bonus</span>
+          <strong id="adventureReward">0 AMT</strong>
+        </div>
+
+        <div class="reward-total">
+          <span>Ledger Balance</span>
+          <strong id="ledgerBalance">0.00 AMT</strong>
+        </div>
+
+        <button id="claimBtn" class="claim-btn">
+          💰 Claim AMT
+        </button>
+      </div>
+
+
+      <div class="panel-card">
+        <h3>🐾 Pet Status</h3>
+
+        <div class="stat">
+          <span>Attack</span>
+          <strong id="attackStat">15</strong>
+        </div>
+
+        <div class="stat">
+          <span>Defense</span>
+          <strong>10</strong>
+        </div>
+
+        <div class="stat">
+          <span>Energy</span>
+          <strong id="energyStat">100</strong>
+        </div>
+      </div>
+
+
+      <div class="panel-card">
+        <h3>📜 Adventure Log</h3>
+
+        <div id="gameLog" class="game-log">
+          <p>Welcome to AMT Adventure.</p>
+          <p>Your journey begins now.</p>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+
+    <button class="nav-item active">
+      🗺️
+      <span>Adventure</span>
+    </button>
+
+    <button class="nav-item">
+      🐾
+      <span>Pets</span>
+    </button>
+
+    <button class="nav-item">
+      🎒
+      <span>Inventory</span>
+    </button>
+
+    <button class="nav-item">
+      🏆
+      <span>Rewards</span>
+    </button>
+
+    <button class="nav-item">
+      👤
+      <span>Profile</span>
+    </button>
+
+  </nav>
+
+
+  <script src="game.js"></script>
+
+</body>
+</html>
